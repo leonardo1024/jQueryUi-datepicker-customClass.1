@@ -1715,29 +1715,3 @@ $.datepicker.version = "@VERSION";
 window['DP_jQuery_' + dpuuid] = $;
 
 })(jQuery);
-
-$(function($) {
-    
-    //Date picker:
-    $('.date-picker').datepicker( {
-            changeMonth: true,
-            changeYear: true,
-            showButtonPanel: true,
-            dateFormat: 'mm/yy',
-            yearRange: new Date().getFullYear() + ':' + (6 + new Date().getFullYear()),
-            onClose: function(dateText, inst) {
-                var month = jQuery("#ui-datepicker-div .ui-datepicker-month :selected").val();
-                var year = jQuery("#ui-datepicker-div .ui-datepicker-year :selected").val();
-                jQuery(this).datepicker('setDate', new Date(year, month, 1));
-            }
-     });
-    
-    var addCustomClass  = function(){
-        var month =jQuery("#ui-datepicker-div .ui-datepicker-month");
-            var year = jQuery("#ui-datepicker-div .ui-datepicker-year");
-            if(!month.hasClass('select-personalizado'))
-                month.addClass('select-personalizado').addClass('select-dark');
-            if(!year.hasClass('select-personalizado'))
-                year.addClass('select-personalizado').addClass('select-dark');
-    }
-});
